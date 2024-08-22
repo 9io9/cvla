@@ -229,23 +229,27 @@ CVLArrayStatusCode cvla_fprint_nocheck(FILE* f, CVLAPrintFunc print_func, CVLArr
     return CVLASuccess;
 }
 
-CVLArrayStatusCode cvla_free(CVLArray* cvla) {
+CVLArrayStatusCode cvla_free(CVLArray** cvla) {
     if (cvla == NULL) {
         return CVLAFuncArgError;
     }
 
-    if (cvla->_cvla != NULL) {
-        free(cvla->_cvla);
+    if ((*cvla)->_cvla != NULL) {
+        free((*cvla)->_cvla);
     }
 
-    free(cvla);
+    free(*cvla);
+
+    *cvla = NULL;
 
     return CVLASuccess;
 }
 
-CVLArrayStatusCode cvla_free_nocheck(CVLArray* cvla) {
-    free(cvla->_cvla);
-    free(cvla);
+CVLArrayStatusCode cvla_free_nocheck(CVLArray** cvla) {
+    free((*cvla)->_cvla);
+    free(*cvla);
+
+    *cvla = NULL;
 
     return CVLASuccess;
 }
