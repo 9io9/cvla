@@ -21,7 +21,7 @@ extern CVLArrayStatusCode cvla_free(CVLArray* cvla);
 
 // no argument check version
 
-extern CVLArrayStatusCode cvla_new_nocheck(size_t arr_length, void* arr, CVLArray** cvla);
+extern CVLArrayStatusCode cvla_new_nocheck(size_t arr_length, size_t arr_elsz, void* arr, CVLArray** cvla);
 
 extern CVLArrayStatusCode cvla_fpush_nocheck(void* el, CVLACopyFunc cpy_func, CVLArray* cvla);
 
