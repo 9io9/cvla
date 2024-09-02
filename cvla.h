@@ -42,4 +42,5 @@ extern CVLArrayStatusCode cvla_fprint_nocheck(FILE* f, CVLAPrintFunc print_func,
 FUNC_ASSERT(CVLA != NULL)
 extern CVLArrayStatusCode cvla_free_nocheck(CVLArray** cvla);
 
+#undef FUNC_ASSERT
 #endif //CVLA_H
