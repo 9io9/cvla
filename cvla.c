@@ -253,3 +253,19 @@ CVLArrayStatusCode cvla_free_nocheck(CVLArray** cvla) {
 
     return CVLASuccess;
 }
+
+CVLArrayStatusCode cvla_clean(CVLArray* cvla) {
+    if (cvla == NULL) {
+        return CVLAFuncArgError;
+    }
+
+    cvla->_cvla_sz = 0;
+
+    return CVLASuccess;
+}
+
+CVLArrayStatusCode cvla_clean_nocheck(CVLArray* cvla) {
+    cvla->_cvla_sz = 0;
+
+    return CVLASuccess;
+}

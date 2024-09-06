@@ -19,6 +19,8 @@ extern CVLArrayStatusCode cvla_fprint(FILE* f, CVLAPrintFunc print_func, CVLArra
 
 extern CVLArrayStatusCode cvla_free(CVLArray** cvla);
 
+extern CVLArrayStatusCode cvla_clean(CVLArray* cvla);
+
 // no argument check version
 
 FUNC_ASSERT(ARR_ELSZ != 0, CVLA != NULL)
@@ -41,6 +43,9 @@ extern CVLArrayStatusCode cvla_fprint_nocheck(FILE* f, CVLAPrintFunc print_func,
 
 FUNC_ASSERT(CVLA != NULL)
 extern CVLArrayStatusCode cvla_free_nocheck(CVLArray** cvla);
+
+FUNC_ASSERT(CVLA != NULL)
+extern CVLArrayStatusCode cvla_clean_nocheck(CVLArray* cvla);
 
 #undef FUNC_ASSERT
 #endif //CVLA_H
