@@ -5,6 +5,8 @@
 #include "cvla.def.h"
 #include "cvla.err.h"
 
+#define FUNC_ASSERT(...)
+
 extern CVLArrayStatusCode cvla_new(size_t arr_length, size_t arr_elsz, void* arr, CVLArray** cvla);
 
 extern CVLArrayStatusCode cvla_fpush(void* el, CVLACopyFunc cpy_func, CVLArray* cvla);

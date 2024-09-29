@@ -7,8 +7,6 @@
 
 #include <stddef.h>
 
-#define FUNC_ASSERT(...)
-
 typedef struct CVLArray {
     size_t _cvla_length;
     size_t _cvla_sz;
